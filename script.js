@@ -1,53 +1,60 @@
 // Wedding Planner Website - Interactive Features
+// Updated for Providers Database Platform
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     initializeSearch();
     initializeScrollAnimations();
-    initializeContest();
     initializeCategoryFilters();
     initializeMobileMenu();
     initializeVendorCards();
+    initializeProviderFilters();
 });
 
 // Search Functionality
 function initializeSearch() {
     const searchBtn = document.querySelector('.search-btn');
-    const searchInput = document.querySelector('.search-input');
+    const categorySelect = document.querySelector('.category-select');
     const locationInput = document.querySelector('.location-input');
 
     searchBtn.addEventListener('click', function() {
-        const query = searchInput.value.trim();
+        const category = categorySelect.value;
         const location = locationInput.value.trim();
 
-        if (query || location) {
-            performSearch(query, location);
+        if (category || location) {
+            performSearch(category, location);
         } else {
-            showNotification('Por favor ingresa un término de búsqueda o ubicación', 'warning');
+            showNotification('Por favor selecciona una categoría o ubicación', 'warning');
         }
     });
 
     // Enter key support
-    [searchInput, locationInput].forEach(input => {
-        input.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                searchBtn.click();
-            }
-        });
+    locationInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            searchBtn.click();
+        }
     });
 }
 
-function performSearch(query, location) {
+function performSearch(category, location) {
     // Simulate search with animation
-    showNotification(`Buscando "${query}" en ${location || 'todas las ubicaciones'}...`, 'info');
+    const categoryText = category || 'todas las categorías';
+    const locationText = location || 'toda la República';
+    showNotification(`Buscando en ${categoryText} - ${locationText}...`, 'info');
     
-    // Scroll to results (in a real app, this would load actual results)
+    // Filter vendors if category is selected
+    if (category) {
+        filterVendorsByCategory(category);
+    }
+    
+    // Scroll to results
     setTimeout(() => {
         const resultsSection = document.querySelector('.awards-section');
         if (resultsSection) {
             resultsSection.scrollIntoView({ behavior: 'smooth' });
         }
-        showNotification('¡Encontramos ' + Math.floor(Math.random() * 500 + 100) + ' resultados!', 'success');
+        const count = document.querySelectorAll('.vendor-card:not(.hidden)').length;
+        showNotification(`¡Encontramos ${count} proveedores!`, 'success');
     }, 1000);
 }
 
@@ -77,40 +84,110 @@ function initializeScrollAnimations() {
     });
 }
 
-// Contest Features
-function initializeContest() {
-    const contestBtns = document.querySelectorAll('.btn-contest, .floating-btn');
+// Provider Filters
+function initializeProviderFilters() {
+    const filterTabs = document.querySelectorAll('.filter-tab');
     
-    contestBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            showContestModal();
+    filterTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Remove active from all tabs
+            filterTabs.forEach(t => t.classList.remove('active'));
+            
+            // Add active to clicked tab
+            this.classList.add('active');
+            
+            const filter = this.getAttribute('data-filter');
+            filterVendorsByCategory(filter);
         });
     });
 }
 
-function showContestModal() {
+function filterVendorsByCategory(category) {
+    const vendorCards = document.querySelectorAll('.vendor-card');
+    
+    vendorCards.forEach(card => {
+        if (category === 'todos') {
+            card.classList.remove('hidden');
+            card.style.display = '';
+        } else {
+            const cardCategory = card.getAttribute('data-category');
+            if (cardCategory === category) {
+                card.classList.remove('hidden');
+                card.style.display = '';
+            } else {
+                card.classList.add('hidden');
+                card.style.display = 'none';
+            }
+        }
+    });
+    
+    // Count visible vendors
+    const visibleCount = document.querySelectorAll('.vendor-card:not(.hidden)').length;
+    showNotification(`Mostrando ${visibleCount} proveedores`, 'info');
+}
+
+// Contest Features - Updated
+function initializeContest() {
+    const floatingBtn = document.querySelector('.floating-btn');
+    
+    if (floatingBtn) {
+        floatingBtn.addEventListener('click', function() {
+            showContactModal();
+        });
+    }
+}
+
+function showContactModal() {
     const modal = createModal(`
         <div class="contest-modal">
-            <h2>🎉 ¡Participa en nuestro sorteo!</h2>
-            <p>Gana $50,000 para tu boda</p>
+            <h2>💬 ¿Necesitas Ayuda?</h2>
+            <p>Contáctanos y te ayudaremos a encontrar los mejores proveedores</p>
             <div class="contest-form">
                 <input type="text" placeholder="Nombre completo" class="modal-input">
                 <input type="email" placeholder="Correo electrónico" class="modal-input">
                 <input type="tel" placeholder="Teléfono" class="modal-input">
-                <input type="date" placeholder="Fecha de tu boda" class="modal-input">
-                <button class="btn-primary" onclick="submitContest()">Participar ahora</button>
+                <select class="modal-input">
+                    <option value="">¿Qué tipo de evento?</option>
+                    <option value="boda">Boda</option>
+                    <option value="corporativo">Evento Corporativo</option>
+                    <option value="social">Evento Social</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <textarea placeholder="Cuéntanos más sobre tu evento..." class="modal-input" rows="4"></textarea>
+                <button class="btn-primary" onclick="submitContact()">Enviar Mensaje</button>
             </div>
         </div>
     `);
 }
 
-function submitContest() {
-    showNotification('¡Registro exitoso! Recibirás un correo de confirmación.', 'success');
+function submitContact() {
+    showNotification('¡Mensaje enviado! Te contactaremos pronto.', 'success');
     closeModal();
+}
+
+function showContestModal() {
+    showContactModal();
 }
 
 // Category Filters
 function initializeCategoryFilters() {
+    const categoryCards = document.querySelectorAll('.card[data-category]');
+    
+    categoryCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            if (!e.target.classList.contains('card-link')) {
+                const category = this.getAttribute('data-category');
+                filterVendorsByCategory(category);
+                
+                // Scroll to providers section
+                const providersSection = document.querySelector('#proveedores');
+                if (providersSection) {
+                    providersSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+    
     const categoryTags = document.querySelectorAll('.category-tag');
     
     categoryTags.forEach(tag => {
@@ -122,14 +199,9 @@ function initializeCategoryFilters() {
             this.classList.add('active');
             
             const category = this.textContent;
-            filterArticles(category);
+            showNotification(`Filtrando por: ${category}`, 'info');
         });
     });
-}
-
-function filterArticles(category) {
-    showNotification(`Mostrando artículos de: ${category}`, 'info');
-    // In a real app, this would filter the articles
 }
 
 // Mobile Menu
@@ -363,10 +435,16 @@ style.textContent = `
         font-size: 16px;
         outline: none;
         transition: border-color 0.3s;
+        font-family: inherit;
     }
     
     .modal-input:focus {
         border-color: #d4458c;
+    }
+    
+    textarea.modal-input {
+        resize: vertical;
+        min-height: 100px;
     }
     
     .contest-modal h2 {

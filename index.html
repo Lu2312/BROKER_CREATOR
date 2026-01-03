@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encuentra Todo lo que necesites | Ana proveedores</title>
+    <title>Base de Datos de Proveedores en México | Broker de Servicios</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,18 +12,18 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <h1>Ana brocker.com</h1>
+                    <h1>🇲🇽 Proveedores MX</h1>
                 </div>
                 <nav class="nav-menu">
-                    <a href="#lugares">Lugares</a>
-                    <a href="#proveedores">Proveedores</a>
-                    <a href="#ideas">Ideas</a>
-                    <a href="#comunidad">Comunidad</a>
-                    <a href="#vestidos">Vestidos</a>
+                    <a href="#bodas">Bodas</a>
+                    <a href="#catering">Catering</a>
+                    <a href="#salones">Salones</a>
+                    <a href="#restaurantes">Restaurantes</a>
+                    <a href="#hoteles">Hoteles</a>
                 </nav>
                 <div class="nav-actions">
-                    <button class="btn-secondary">Acceso empresas</button>
-                    <button class="btn-primary">Mis proveedores</button>
+                    <button class="btn-secondary">Registrar Empresa</button>
+                    <button class="btn-primary">Acceso</button>
                 </div>
             </div>
         </div>
@@ -32,215 +32,385 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h2 class="hero-title">Encuentra todo lo que necesitas para tus contrataciones</h2>
-            <p class="hero-subtitle">¡Tienes más de 50,000 proveedores para elegir!</p>
+            <h2 class="hero-title">La Mayor Base de Datos de Proveedores en México</h2>
+            <p class="hero-subtitle">Más de 50,000 proveedores verificados en todo el país</p>
             <div class="search-box">
-                <input type="text" placeholder="Buscar proveedores, lugares..." class="search-input">
-                <input type="text" placeholder="Ubicación" class="location-input">
+                <select class="category-select">
+                    <option value="">Todas las categorías</option>
+                    <option value="bodas">Proveedores de Bodas</option>
+                    <option value="catering">Catering</option>
+                    <option value="salones">Salones de Fiesta</option>
+                    <option value="restaurantes">Restaurantes</option>
+                    <option value="hoteles">Hoteles</option>
+                    <option value="fotografia">Fotografía</option>
+                    <option value="musica">Música & DJ</option>
+                    <option value="decoracion">Decoración</option>
+                </select>
+                <input type="text" placeholder="Ciudad o Estado..." class="location-input">
                 <button class="search-btn">Buscar</button>
             </div>
         </div>
     </section>
 
-    <!-- Planning Section -->
+    <!-- Categories Section -->
     <section class="planning-section">
         <div class="container">
-            <h3 class="section-title">Disfruta planeando tus contrataciones</h3>
-            <p class="section-subtitle">Empieza a planear gratis tus contrataciones con nosotros.</p>
+            <h3 class="section-title">Explora por Categoría</h3>
+            <p class="section-subtitle">Encuentra el proveedor perfecto para tus necesidades</p>
             <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">📍</div>
-                    <h4>Lugares para boda</h4>
-                    <p>Checa las fotos, opiniones y mucho más. ¡Contáctalos desde aquí!</p>
-                    <a href="#" class="card-link">Busca locaciones →</a>
+                <div class="card" data-category="bodas">
+                    <div class="card-icon">💍</div>
+                    <h4>Proveedores de Bodas</h4>
+                    <p>Fotógrafos, videógrafos, DJ, música en vivo, decoración y más. +5,000 proveedores.</p>
+                    <a href="#bodas" class="card-link">Ver proveedores →</a>
                 </div>
-                <div class="card">
-                    <div class="card-icon">👥</div>
-                    <h4>Proveedores</h4>
-                    <p>Encuentra a los mejores profesionales de tu zona para cada categoría.</p>
-                    <a href="#" class="card-link">Empieza tu selección →</a>
+                <div class="card" data-category="catering">
+                    <div class="card-icon">🍽️</div>
+                    <h4>Servicios de Catering</h4>
+                    <p>Catering para eventos corporativos, sociales y familiares. +2,500 empresas.</p>
+                    <a href="#catering" class="card-link">Explorar catering →</a>
                 </div>
-                <div class="card">
-                    <div class="card-icon">🌐</div>
-                    <h4>Tu web de boda gratis</h4>
-                    <p>Comparte los detalles del gran día con tus invitados con una web 100% personalizada.</p>
-                    <a href="#" class="card-link">Crea gratis tu web →</a>
+                <div class="card" data-category="salones">
+                    <div class="card-icon">🎉</div>
+                    <h4>Salones de Fiesta</h4>
+                    <p>Salones para todo tipo de eventos, con capacidad desde 50 hasta 1000 personas.</p>
+                    <a href="#salones" class="card-link">Ver salones →</a>
                 </div>
-                <div class="card">
-                    <div class="card-icon">💡</div>
-                    <h4>Toda la inspiración</h4>
-                    <p>Tendencias, ideas, novedades... ¡encuentra la inspiración para tus contrataciones!</p>
-                    <a href="#" class="card-link">Inspírate aquí →</a>
+                <div class="card" data-category="restaurantes">
+                    <div class="card-icon">🍴</div>
+                    <h4>Restaurantes</h4>
+                    <p>Restaurantes con espacios para eventos privados en toda la República Mexicana.</p>
+                    <a href="#restaurantes" class="card-link">Buscar restaurantes →</a>
                 </div>
-                <div class="card">
-                    <div class="card-icon">📝</div>
-                    <h4>Menú de planificación</h4>
-                    <p>Todo en orden con las herramientas gratuitas de planeación.</p>
-                    <a href="#" class="card-link">Descubre tu planificador →</a>
+                <div class="card" data-category="hoteles">
+                    <div class="card-icon">🏨</div>
+                    <h4>Hoteles y Venues</h4>
+                    <p>Hoteles boutique, haciendas y venues únicos para eventos especiales.</p>
+                    <a href="#hoteles" class="card-link">Ver hoteles →</a>
+                </div>
+                <div class="card" data-category="otros">
+                    <div class="card-icon">✨</div>
+                    <h4>Otros Servicios</h4>
+                    <p>Florerías, transportes, mobiliario, audio, iluminación y más servicios.</p>
+                    <a href="#otros" class="card-link">Ver más →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contest Banner -->
+    <!-- Stats Banner -->
     <section class="contest-banner">
         <div class="container">
-            <div class="contest-content">
-                <h3>🎉 ¡Gana $50,000 para tus contrataciones!</h3>
-                <p>Cada mes tienes una nueva oportunidad de ser la pareja ganadora</p>
-                <button class="btn-contest">Participa ahora</button>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>50,000+</h3>
+                    <p>Proveedores Registrados</p>
+                </div>
+                <div class="stat-item">
+                    <h3>32 Estados</h3>
+                    <p>Cobertura Nacional</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100,000+</h3>
+                    <p>Eventos Realizados</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Verificado</h3>
+                    <p>Todos Nuestros Proveedores</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Wedding Awards -->
-    <section class="awards-section">
+    <!-- Featured Providers -->
+    <section class="awards-section" id="proveedores">
         <div class="container">
-            <h3 class="section-title">Wedding Awards</h3>
-            <p class="section-subtitle">Consulta los ganadores de tu zona</p>
-            <div class="vendors-grid">
-                <div class="vendor-card">
+            <h3 class="section-title">Proveedores Destacados</h3>
+            <p class="section-subtitle">Los mejores proveedores verificados de México</p>
+            
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="todos">Todos</button>
+                <button class="filter-tab" data-filter="bodas">Bodas</button>
+                <button class="filter-tab" data-filter="catering">Catering</button>
+                <button class="filter-tab" data-filter="salones">Salones</button>
+                <button class="filter-tab" data-filter="restaurantes">Restaurantes</button>
+                <button class="filter-tab" data-filter="hoteles">Hoteles</button>
+            </div>
+            <div class="vendors-grid" id="vendors-container">
+                <!-- Proveedores de Bodas -->
+                <div class="vendor-card" data-category="bodas">
                     <div class="vendor-image"></div>
                     <div class="vendor-info">
-                        <h4>Hotel Quinta Real</h4>
-                        <div class="rating">⭐ 4.6 (14)</div>
-                        <p class="location">Oaxaca</p>
-                        <p class="price">Desde $1,200</p>
-                        <p class="capacity">10 a 350 Invitados</p>
+                        <span class="vendor-badge">Fotografía</span>
+                        <h4>Foto Arte Studios</h4>
+                        <div class="rating">⭐ 4.9 (127)</div>
+                        <p class="location">📍 Ciudad de México</p>
+                        <p class="price">💰 Desde $18,000</p>
+                        <p class="services">Foto y Video | Álbum | Drone</p>
                     </div>
                 </div>
-                <div class="vendor-card">
+                <div class="vendor-card" data-category="bodas">
                     <div class="vendor-image"></div>
                     <div class="vendor-info">
-                        <h4>ProCam Estudio</h4>
-                        <div class="rating">⭐ 5.0 (41)</div>
-                        <p class="location">Oaxaca</p>
-                        <p class="price">Desde $22,000</p>
-                        <span class="promo">-10% Descuento</span>
+                        <span class="vendor-badge">DJ & Música</span>
+                        <h4>Ritmo Latino Entertainment</h4>
+                        <div class="rating">⭐ 5.0 (89)</div>
+                        <p class="location">📍 Guadalajara, Jalisco</p>
+                        <p class="price">💰 Desde $12,000</p>
+                        <p class="services">DJ | Iluminación | Audio</p>
                     </div>
                 </div>
-                <div class="vendor-card">
+                <div class="vendor-card" data-category="bodas">
                     <div class="vendor-image"></div>
                     <div class="vendor-info">
-                        <h4>Caoba Música</h4>
-                        <div class="rating">⭐ 4.9 (51)</div>
-                        <p class="location">Huatulco, Oaxaca</p>
-                        <p class="price">Desde $10,000</p>
-                        <span class="promo">-5% Descuento</span>
+                        <span class="vendor-badge">Decoración</span>
+                        <h4>Flores & Diseño</h4>
+                        <div class="rating">⭐ 4.8 (63)</div>
+                        <p class="location">📍 Monterrey, N.L.</p>
+                        <p class="price">💰 Desde $25,000</p>
+                        <p class="services">Arreglos | Montaje | Mobiliario</p>
+                    </div>
+                </div>
+                
+                <!-- Catering -->
+                <div class="vendor-card" data-category="catering">
+                    <div class="vendor-image"></div>
+                    <div class="vendor-info">
+                        <span class="vendor-badge">Catering</span>
+                        <h4>Banquetes Gourmet MX</h4>
+                        <div class="rating">⭐ 4.9 (156)</div>
+                        <p class="location">📍 Ciudad de México</p>
+                        <p class="price">💰 $450/persona</p>
+                        <p class="services">Menú completo | Servicio | Bebidas</p>
+                    </div>
+                </div>
+                <div class="vendor-card" data-category="catering">
+                    <div class="vendor-image"></div>
+                    <div class="vendor-info">
+                        <span class="vendor-badge">Catering</span>
+                        <h4>Sabores de Jalisco</h4>
+                        <div class="rating">⭐ 4.7 (92)</div>
+                        <p class="location">📍 Guadalajara, Jalisco</p>
+                        <p class="price">💰 $380/persona</p>
+                        <p class="services">Comida mexicana | Barra | Staff</p>
+                    </div>
+                </div>
+                
+                <!-- Salones -->
+                <div class="vendor-card" data-category="salones">
+                    <div class="vendor-image"></div>
+                    <div class="vendor-info">
+                        <span class="vendor-badge">Salón</span>
+                        <h4>Salón Esmeralda</h4>
+                        <div class="rating">⭐ 4.8 (78)</div>
+                        <p class="location">📍 Puebla, Puebla</p>
+                        <p class="price">💰 $35,000 por evento</p>
+                        <p class="services">Cap. 300 personas | A/C | Estacionamiento</p>
+                    </div>
+                </div>
+                <div class="vendor-card" data-category="salones">
+                    <div class="vendor-image"></div>
+                    <div class="vendor-info">
+                        <span class="vendor-badge">Salón</span>
+                        <h4>Jardín Las Palomas</h4>
+                        <div class="rating">⭐ 5.0 (45)</div>
+                        <p class="location">📍 Querétaro, Qro.</p>
+                        <p class="price">💰 $42,000 por evento</p>
+                        <p class="services">Cap. 500 personas | Jardín | Alberca</p>
+                    </div>
+                </div>
+                
+                <!-- Restaurantes -->
+                <div class="vendor-card" data-category="restaurantes">
+                    <div class="vendor-image"></div>
+                    <div class="vendor-info">
+                        <span class="vendor-badge">Restaurante</span>
+                        <h4>La Casona Restaurant</h4>
+                        <div class="rating">⭐ 4.6 (134)</div>
+                        <p class="location">📍 Oaxaca, Oax.</p>
+                        <p class="price">💰 $350/persona</p>
+                        <p class="services">Terraza privada | 120 personas | Bar</p>
+                    </div>
+                </div>
+                <div class="vendor-card" data-category="restaurantes">
+                    <div class="vendor-image"></div>
+                    <div class="vendor-info">
+                        <span class="vendor-badge">Restaurante</span>
+                        <h4>El Mirador Grill</h4>
+                        <div class="rating">⭐ 4.9 (98)</div>
+                        <p class="location">📍 Cancún, Q. Roo</p>
+                        <p class="price">💰 $480/persona</p>
+                        <p class="services">Vista al mar | 80 personas | Mariscos</p>
+                    </div>
+                </div>
+                
+                <!-- Hoteles -->
+                <div class="vendor-card" data-category="hoteles">
+                    <div class="vendor-image"></div>
+                    <div class="vendor-info">
+                        <span class="vendor-badge">Hotel</span>
+                        <h4>Hacienda San Miguel</h4>
+                        <div class="rating">⭐ 5.0 (67)</div>
+                        <p class="location">📍 Guanajuato, Gto.</p>
+                        <p class="price">💰 Desde $4,500/noche</p>
+                        <p class="services">Salón | 200 personas | Hospedaje</p>
+                    </div>
+                </div>
+                <div class="vendor-card" data-category="hoteles">
+                    <div class="vendor-image"></div>
+                    <div class="vendor-info">
+                        <span class="vendor-badge">Hotel</span>
+                        <h4>Hotel Boutique Rivera</h4>
+                        <div class="rating">⭐ 4.7 (112)</div>
+                        <p class="location">📍 Playa del Carmen, Q. Roo</p>
+                        <p class="price">💰 Desde $3,800/noche</p>
+                        <p class="services">Playa | 150 personas | All Inclusive</p>
+                    </div>
+                </div>
+                
+                <div class="vendor-card" data-category="catering">
+                    <div class="vendor-image"></div>
+                    <div class="vendor-info">
+                        <span class="vendor-badge">Catering</span>
+                        <h4>Alta Cocina Eventos</h4>
+                        <div class="rating">⭐ 5.0 (73)</div>
+                        <p class="location">📍 Monterrey, N.L.</p>
+                        <p class="price">💰 $520/persona</p>
+                        <p class="services">Chef privado | Menú personalizado</p>
                     </div>
                 </div>
             </div>
-            <button class="btn-secondary centered">Conoce a todos los ganadores</button>
+            <button class="btn-secondary centered">Ver todos los proveedores (50,000+)</button>
         </div>
     </section>
 
-    <!-- Real Weddings -->
+    <!-- Success Stories -->
     <section class="real-weddings">
         <div class="container">
-            <h3 class="section-title">Bodas reales</h3>
-            <p class="section-subtitle">Inspírate en las bodas de otras parejas</p>
+            <h3 class="section-title">Casos de Éxito</h3>
+            <p class="section-subtitle">Eventos exitosos realizados con nuestros proveedores</p>
             <div class="weddings-grid">
                 <div class="wedding-card">
                     <div class="wedding-image"></div>
-                    <p>Mireille & Leonardo, 130 fotos</p>
+                    <div class="event-info">
+                        <h4>Boda Corporativa Tech Summit</h4>
+                        <p>📍 Ciudad de México | 500 invitados</p>
+                        <p>Catering + Hotel + Audio</p>
+                    </div>
                 </div>
                 <div class="wedding-card">
                     <div class="wedding-image"></div>
-                    <p>Jorge & Erandi, 109 fotos</p>
+                    <div class="event-info">
+                        <h4>Aniversario Empresarial</h4>
+                        <p>📍 Monterrey | 300 invitados</p>
+                        <p>Salón + DJ + Fotografía</p>
+                    </div>
                 </div>
             </div>
-            <button class="btn-secondary centered">Ver más bodas</button>
+            <button class="btn-secondary centered">Ver más casos de éxito</button>
         </div>
     </section>
 
-    <!-- Ideas and Articles -->
+    <!-- Resources -->
     <section class="articles-section">
         <div class="container">
-            <h3 class="section-title">Ideas y consejos</h3>
-            <p class="section-subtitle">Encuentra toda la inspiración que necesitas</p>
+            <h3 class="section-title">Recursos y Guías</h3>
+            <p class="section-subtitle">Todo lo que necesitas saber para contratar proveedores</p>
             <div class="categories-grid">
-                <div class="category-tag">Preparativos de boda</div>
-                <div class="category-tag">Ceremonia de boda</div>
-                <div class="category-tag">Banquete de bodas</div>
-                <div class="category-tag">Proveedores para tus contrataciones</div>
-                <div class="category-tag">Moda</div>
-                <div class="category-tag">Belleza y salud</div>
+                <div class="category-tag">Cómo Elegir Proveedores</div>
+                <div class="category-tag">Presupuestos</div>
+                <div class="category-tag">Contratos y Legal</div>
+                <div class="category-tag">Tendencias en Eventos</div>
+                <div class="category-tag">Guía por Región</div>
+                <div class="category-tag">Tips de Negociación</div>
             </div>
             <div class="articles-grid">
                 <article class="article-card">
                     <div class="article-image"></div>
                     <div class="article-content">
-                        <span class="article-category">LA NOVIA</span>
-                        <h4>Rococó Vibes: vuelven las bodas estilo barroco</h4>
-                        <p>Descubre las nuevas tendencias en decoración...</p>
+                        <span class="article-category">GUÍA</span>
+                        <h4>Cómo Seleccionar el Mejor Proveedor de Catering</h4>
+                        <p>Consejos para elegir el servicio ideal para tu evento...</p>
                     </div>
                 </article>
                 <article class="article-card">
                     <div class="article-image"></div>
                     <div class="article-content">
-                        <span class="article-category">CEREMONIAS</span>
-                        <h4>10 ideas para ceremonias inolvidables</h4>
-                        <p>Crea un momento único y especial...</p>
+                        <span class="article-category">PRESUPUESTO</span>
+                        <h4>Precios Promedio de Proveedores en México 2026</h4>
+                        <p>Conoce los rangos de precios por estado y categoría...</p>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-image"></div>
+                    <div class="article-content">
+                        <span class="article-category">LEGAL</span>
+                        <h4>10 Cláusulas Esenciales en Contratos de Proveedores</h4>
+                        <p>Protégete al contratar servicios para tu evento...</p>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-image"></div>
+                    <div class="article-content">
+                        <span class="article-category">TENDENCIAS</span>
+                        <h4>Los 5 Salones Más Solicitados en CDMX</h4>
+                        <p>Descubre los espacios más populares del año...</p>
                     </div>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- Community Section -->
+    <!-- Testimonials Section -->
     <section class="community-section">
         <div class="container">
-            <h3 class="section-title">Comunidad</h3>
-            <p class="section-subtitle">Resuelve todas tus dudas sobre la boda</p>
-            <div class="community-post">
-                <h4>Ayuda!</h4>
-                <p>Quiero hacer mis contrataciones civil y la religiosa en distintas fechas ¿lo recomiendan?</p>
-                <span class="post-author">Diana · 30 de Noviembre de 2025</span>
+            <h3 class="section-title">Testimonios</h3>
+            <p class="section-subtitle">Lo que dicen nuestros usuarios</p>
+            <div class="testimonials-grid">
+                <div class="community-post">
+                    <h4>⭐⭐⭐⭐⭐ Excelente plataforma</h4>
+                    <p>"Encontré el catering perfecto para mi evento corporativo. La base de datos es muy completa y todos los proveedores están verificados."</p>
+                    <span class="post-author">Carlos Martínez · Director de Eventos · CDMX</span>
+                </div>
+                <div class="community-post">
+                    <h4>⭐⭐⭐⭐⭐ Muy recomendable</h4>
+                    <p>"Organizar nuestra boda fue muy fácil gracias a esta plataforma. Contactamos a 5 proveedores y todos respondieron rápido."</p>
+                    <span class="post-author">María Fernández · Novia · Guadalajara</span>
+                </div>
             </div>
-            <button class="btn-secondary centered">Ver todos los posts</button>
+            <button class="btn-secondary centered">Ver más testimonios</button>
         </div>
     </section>
 
-    <!-- Website Templates -->
+    <!-- Register Section -->
     <section class="templates-section">
         <div class="container">
-            <h3 class="section-title">Crea tu web de boda</h3>
-            <p class="section-subtitle">Elige entre docenas de hermosos diseños</p>
-            <div class="templates-carousel">
-                <div class="template-card">
-                    <div class="template-preview"></div>
-                    <p>Palm and Protea</p>
+            <h3 class="section-title">¿Eres Proveedor?</h3>
+            <p class="section-subtitle">Registra tu negocio y llega a miles de clientes potenciales</p>
+            <div class="register-benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h4>Perfil Profesional</h4>
+                    <p>Crea tu perfil con fotos, precios y servicios</p>
                 </div>
-                <div class="template-card">
-                    <div class="template-preview"></div>
-                    <p>Classic Landscape</p>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h4>Clientes Directos</h4>
+                    <p>Recibe solicitudes de clientes interesados</p>
                 </div>
-                <div class="template-card">
-                    <div class="template-preview"></div>
-                    <p>Vintage Mountain</p>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💎</div>
+                    <h4>Destacate</h4>
+                    <p>Opciones premium para mayor visibilidad</p>
                 </div>
-                <div class="template-card">
-                    <div class="template-preview"></div>
-                    <p>Romantic Calligraphy</p>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📈</div>
+                    <h4>Estadísticas</h4>
+                    <p>Analiza tus visitas y conversiones</p>
                 </div>
             </div>
-            <button class="btn-primary centered">Ver más diseños</button>
-        </div>
-    </section>
-
-    <!-- Dress Catalog -->
-    <section class="dresses-section">
-        <div class="container">
-            <h3 class="section-title">¿AÚN NO ENCONTRASTE TU VESTIDO IDEAL?</h3>
-            <h4 class="subsection-title">Catálogo de vestidos</h4>
-            <p class="section-subtitle">Descubre las últimas tendencias de los mejores diseñadores</p>
-            <div class="brands-grid">
-                <div class="brand-card">Rosa Clará</div>
-                <div class="brand-card">Pronovias</div>
-                <div class="brand-card">Vera Wang</div>
-                <div class="brand-card">Monique Lhuillier</div>
-            </div>
-            <button class="btn-secondary centered">Ver catálogo completo</button>
+            <button class="btn-primary centered">Registrar mi Empresa</button>
         </div>
     </section>
 
@@ -249,30 +419,41 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
-                    <h5>Mis proveedores</h5>
-                    <ul>
-                        <li><a href="#">Agenda</a></li>
-                        <li><a href="#">Invitados</a></li>
-                        <li><a href="#">Presupuestador</a></li>
-                        <li><a href="#">Proveedores</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h5>Lugares de boda</h5>
-                    <ul>
-                        <li><a href="#">Haciendas</a></li>
-                        <li><a href="#">Hoteles</a></li>
-                        <li><a href="#">Jardines</a></li>
-                        <li><a href="#">Quintas</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
                     <h5>Proveedores</h5>
                     <ul>
-                        <li><a href="#">Fotógrafos</a></li>
-                        <li><a href="#">Video</a></li>
-                        <li><a href="#">Música</a></li>
+                        <li><a href="#">Bodas</a></li>
                         <li><a href="#">Catering</a></li>
+                        <li><a href="#">Salones</a></li>
+                        <li><a href="#">Restaurantes</a></li>
+                        <li><a href="#">Hoteles</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5>Por Estado</h5>
+                    <ul>
+                        <li><a href="#">Ciudad de México</a></li>
+                        <li><a href="#">Jalisco</a></li>
+                        <li><a href="#">Nuevo León</a></li>
+                        <li><a href="#">Quintana Roo</a></li>
+                        <li><a href="#">Ver todos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5>Recursos</h5>
+                    <ul>
+                        <li><a href="#">Guías</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Precios</a></li>
+                        <li><a href="#">Testimonios</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5>Empresa</h5>
+                    <ul>
+                        <li><a href="#">Acerca de</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Registrar Empresa</a></li>
+                        <li><a href="#">Ayuda</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -280,20 +461,21 @@
                     <div class="social-links">
                         <a href="#" class="social-icon">Facebook</a>
                         <a href="#" class="social-icon">Instagram</a>
-                        <a href="#" class="social-icon">Pinterest</a>
+                        <a href="#" class="social-icon">LinkedIn</a>
                         <a href="#" class="social-icon">Twitter</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 TuBoda.com | <a href="#">Condiciones legales</a> | <a href="#">Aviso de privacidad</a></p>
+                <p>&copy; 2026 Proveedores MX | Base de Datos de Proveedores en México</p>
+                <p><a href="#">Condiciones legales</a> | <a href="#">Aviso de privacidad</a> | <a href="#">Política de cookies</a></p>
             </div>
         </div>
     </footer>
 
-    <!-- Floating Contest Button -->
+    <!-- Floating Contact Button -->
     <div class="floating-contest">
-        <button class="floating-btn">🎉 Sorteo $50,000</button>
+        <button class="floating-btn">💬 ¿Necesitas Ayuda?</button>
     </div>
 
     <script src="script.js"></script>

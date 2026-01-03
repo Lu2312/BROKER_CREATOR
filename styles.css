@@ -136,12 +136,23 @@ body {
 .search-box {
     display: flex;
     gap: 10px;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     background: white;
     padding: 10px;
     border-radius: 50px;
     box-shadow: var(--shadow);
+}
+
+.category-select {
+    flex: 1;
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    border-radius: 25px;
+    outline: none;
+    background: white;
+    cursor: pointer;
 }
 
 .search-input, .location-input {
@@ -235,12 +246,35 @@ body {
     transform: translateX(5px);
 }
 
-/* Contest Banner */
+/* Contest Banner / Stats */
 .contest-banner {
-    background: linear-gradient(135deg, #ff6b9d 0%, #ffa07a 100%);
+    background: linear-gradient(135deg, #d4458c 0%, #9c27b0 100%);
     padding: 50px 0;
     color: white;
     text-align: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.stat-item p {
+    font-size: 16px;
+    opacity: 0.95;
 }
 
 .contest-content h3 {
@@ -261,6 +295,35 @@ body {
 }
 
 /* Vendors Grid */
+.filter-tabs {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    padding: 12px 24px;
+    border: 2px solid var(--border-color);
+    background: white;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-tab:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.filter-tab.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
 .vendors-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -281,6 +344,10 @@ body {
     box-shadow: var(--shadow-hover);
 }
 
+.vendor-card.hidden {
+    display: none;
+}
+
 .vendor-image {
     width: 100%;
     height: 250px;
@@ -289,6 +356,17 @@ body {
 
 .vendor-info {
     padding: 20px;
+}
+
+.vendor-badge {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .vendor-info h4 {
@@ -302,10 +380,18 @@ body {
     margin-bottom: 8px;
 }
 
-.location, .price, .capacity {
+.location, .price, .capacity, .services {
     color: #666;
     font-size: 14px;
     margin: 5px 0;
+}
+
+.services {
+    font-weight: 500;
+    color: #555;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: 10px;
 }
 
 .promo {
@@ -343,6 +429,22 @@ body {
     width: 100%;
     height: 300px;
     background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+}
+
+.event-info {
+    padding: 20px;
+}
+
+.event-info h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--dark-text);
+}
+
+.event-info p {
+    color: #666;
+    font-size: 14px;
+    margin: 5px 0;
 }
 
 .wedding-card p {
@@ -422,13 +524,24 @@ body {
 }
 
 /* Community */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
 .community-post {
     background: white;
     padding: 30px;
     border-radius: 15px;
     box-shadow: var(--shadow);
-    max-width: 700px;
-    margin: 0 auto 40px;
+    transition: all 0.3s;
+}
+
+.community-post:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
 }
 
 .community-post h4 {
@@ -444,6 +557,43 @@ body {
 }
 
 /* Templates Carousel */
+.register-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.benefit-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.benefit-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.benefit-card h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--dark-text);
+}
+
+.benefit-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
 .templates-carousel {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
